@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harshita Anukriti Makeup Studio</title>
+    <meta name="description" content="Luxury bridal makeup and professional makeup training by Harshita Anukriti." />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: "#F3DDD4",
+                        ivory: "#FAF7F3",
+                        champagne: "#C8A27A",
+                        nude: "#E8C6B8",
+                        textdark: "#2A2A2A",
+                        textmuted: "#6F6A66",
+                    },
+                    borderRadius: {
+                        xl: "24px",
+                    },
+                    fontFamily: {
+                        serif: ["Playfair Display", "serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Page transition */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        body.page-loaded {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+</head>
+
+<body class="bg-ivory font-sans text-textdark">
+    <div id="header"></div>
+
+    <!-- HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <h1 class="text-4xl md:text-5xl font-serif leading-tight">
+                Timeless Bridal Makeup <br> & Professional Training
+            </h1>
+            <p class="mt-4 text-textmuted">
+                Luxury bridal artistry and expert makeup education crafted with elegance and precision.
+            </p>
+            <div class="mt-6 flex gap-4">
+                <button class="bg-champagne text-white px-6 py-3 rounded-full hover:shadow-lg transition">
+                    Book Bridal Makeup
+                </button>
+                <button
+                    class="border border-champagne text-champagne px-6 py-3 rounded-full hover:bg-champagne hover:text-white transition">
+                    Join Makeup Training
+                </button>
+            </div>
+        </div>
+
+        <!-- Swiper Carousel -->
+        <div class="swiper rounded-xl overflow-hidden">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/hero/hero-1.jpg" class="w-full h-[460px] object-cover">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/hero/hero-2.jpg" class="w-full h-[460px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="bg-blush py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-serif text-center mb-12">Our Signature Services</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl text-center hover:-translate-y-1 transition">
+                    Bridal Makeup
+                </div>
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl text-center hover:-translate-y-1 transition">
+                    HD / Airbrush
+                </div>
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl text-center hover:-translate-y-1 transition">
+                    Hair Styling
+                </div>
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl text-center hover:-translate-y-1 transition">
+                    On Location
+                </div>
+                <div data-aos="fade-up" class="bg-white p-6 rounded-xl text-center hover:-translate-y-1 transition">
+                    Makeup Courses
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>AOS.init({ once: true, duration: 800 });</script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".swiper", {
+            loop: true,
+            autoplay: { delay: 4000 },
+            effect: "fade"
+        });
+    </script>
+    <script>
+        // Fade in on page load
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("page-loaded");
+        });
+
+        // Intercept link clicks for fade-out
+        document.addEventListener("click", function (e) {
+            const link = e.target.closest("a");
+
+            if (
+                link &&
+                link.href &&
+                link.origin === window.location.origin &&
+                !link.hasAttribute("target") &&
+                !link.href.includes("#")
+            ) {
+                e.preventDefault();
+                document.body.classList.remove("page-loaded");
+
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 400);
+            }
+        });
+
+        // Load Header
+        fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                highlightActiveLink();
+            });
+
+        // Load Footer
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+
+        // Highlight active menu item
+        function highlightActiveLink() {
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            document.querySelectorAll(".nav-link").forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add(
+                        "text-champagne",
+                        "font-medium",
+                        "border-b-2",
+                        "border-champagne"
+                    );
+                }
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>

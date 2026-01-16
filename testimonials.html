@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials | Harshita Anukriti Makeup Studio</title>
+    <meta name="description" content="What brides and students say about Harshita Anukriti Makeup Studio." />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: "#F3DDD4",
+                        ivory: "#FAF7F3",
+                        champagne: "#C8A27A",
+                        nude: "#E8C6B8",
+                        textdark: "#2A2A2A",
+                        textmuted: "#6F6A66",
+                    },
+                    fontFamily: {
+                        serif: ["Playfair Display", "serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        xl: "24px",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Page transition */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        body.page-loaded {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body class="bg-ivory font-sans text-textdark">
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="bg-blush py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-serif mb-4" data-aos="fade-up">
+                What Our Clients Say
+            </h1>
+            <p class="text-textmuted max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+                Heartfelt words from brides and students who trusted us with their special moments and careers.
+            </p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL SLIDER -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+        <div class="swiper testimonialsSwiper" data-aos="fade-up">
+            <div class="swiper-wrapper">
+
+                <!-- Testimonial 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                        <p class="text-textmuted mb-6">
+                            “Harshita made me feel so confident and beautiful on my wedding day.
+                            The makeup was flawless and exactly what I wanted.”
+                        </p>
+                        <h4 class="font-medium">— Bride, Anjali</h4>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                        <p class="text-textmuted mb-6">
+                            “The makeup training was extremely detailed and professional.
+                            I gained confidence and real industry knowledge.”
+                        </p>
+                        <h4 class="font-medium">— Student, Neha</h4>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="swiper-slide">
+                    <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                        <p class="text-textmuted mb-6">
+                            “From hygiene to final look, everything was handled perfectly.
+                            Highly recommend Harshita Anukriti Makeup Studio.”
+                        </p>
+                        <h4 class="font-medium">— Bride, Riya</h4>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="swiper-slide">
+                    <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                        <p class="text-textmuted mb-6">
+                            “A perfect balance of creativity and professionalism.
+                            The course helped me start my makeup journey confidently.”
+                        </p>
+                        <h4 class="font-medium">— Student, Pooja</h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination mt-8"></div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-blush py-24 text-center">
+        <h2 class="text-3xl font-serif mb-4" data-aos="fade-up">
+            Ready to Join Our Happy Clients?
+        </h2>
+        <p class="text-textmuted mb-6" data-aos="fade-up" data-aos-delay="150">
+            Book your bridal makeup or enroll in our professional training today.
+        </p>
+        <div class="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+            <a href="contact.html" class="bg-champagne text-white px-8 py-3 rounded-full hover:shadow-lg transition">
+                Contact Us
+            </a>
+            <a href="courses.html"
+                class="border border-champagne text-champagne px-8 py-3 rounded-full hover:bg-champagne hover:text-white transition">
+                View Courses
+            </a>
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({ once: true, duration: 800 });
+
+        new Swiper(".testimonialsSwiper", {
+            loop: true,
+            autoplay: { delay: 4500 },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+    <script>
+        // Fade in on page load
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("page-loaded");
+        });
+
+        // Intercept link clicks for fade-out
+        document.addEventListener("click", function (e) {
+            const link = e.target.closest("a");
+
+            if (
+                link &&
+                link.href &&
+                link.origin === window.location.origin &&
+                !link.hasAttribute("target") &&
+                !link.href.includes("#")
+            ) {
+                e.preventDefault();
+                document.body.classList.remove("page-loaded");
+
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 400);
+            }
+        });
+
+        // Load Header
+        fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                highlightActiveLink();
+            });
+
+        // Load Footer
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+
+        // Highlight active menu item
+        function highlightActiveLink() {
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            document.querySelectorAll(".nav-link").forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add(
+                        "text-champagne",
+                        "font-medium",
+                        "border-b-2",
+                        "border-champagne"
+                    );
+                }
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>

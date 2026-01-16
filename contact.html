@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Harshita Anukriti Makeup Studio</title>
+    <meta name="description"
+        content="Contact Harshita Anukriti Makeup Studio for bridal makeup bookings and professional training." />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: "#F3DDD4",
+                        ivory: "#FAF7F3",
+                        champagne: "#C8A27A",
+                        nude: "#E8C6B8",
+                        textdark: "#2A2A2A",
+                        textmuted: "#6F6A66",
+                    },
+                    fontFamily: {
+                        serif: ["Playfair Display", "serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        xl: "24px",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Page transition */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        body.page-loaded {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body class="bg-ivory font-sans text-textdark">
+    <div id="header"></div>
+
+    <!-- PAGE HERO -->
+    <section class="bg-blush py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-serif mb-4" data-aos="fade-up">
+                Get in Touch
+            </h1>
+            <p class="text-textmuted max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+                Have a question, want to book bridal makeup, or enroll in a course?
+                We’d love to hear from you.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
+
+        <!-- CONTACT DETAILS -->
+        <div data-aos="fade-right">
+            <h2 class="text-3xl font-serif mb-6">Contact Details</h2>
+
+            <p class="text-textmuted mb-4">
+                Reach out to us via phone, WhatsApp, or Instagram for quick responses
+                regarding bridal bookings and professional training.
+            </p>
+
+            <ul class="space-y-4 text-textmuted">
+                <li>
+                    <strong class="text-textdark">Phone:</strong><br>
+                    <a href="tel:+919999999999" class="text-champagne hover:underline">
+                        +91 99999 99999
+                    </a>
+                </li>
+
+                <li>
+                    <strong class="text-textdark">WhatsApp:</strong><br>
+                    <a href="https://wa.me/919999999999?text=Hello%20Harshita%20Anukriti%20Makeup%20Studio,%20I%20would%20like%20to%20enquire."
+                        target="_blank" class="text-champagne hover:underline">
+                        Chat on WhatsApp
+                    </a>
+                </li>
+
+                <li>
+                    <strong class="text-textdark">Instagram:</strong><br>
+                    <a href="https://instagram.com/" target="_blank" class="text-champagne hover:underline">
+                        @harshitaanukritimakeup
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div data-aos="fade-left">
+            <h2 class="text-3xl font-serif mb-6">Send a Message</h2>
+
+            <form class="bg-white p-8 rounded-xl shadow-sm space-y-5">
+
+                <div>
+                    <label class="block text-sm text-textmuted mb-1">Name</label>
+                    <input type="text" placeholder="Your Name"
+                        class="w-full border border-gray-300 rounded-full px-4 py-3 focus:outline-none focus:border-champagne">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-textmuted mb-1">Phone</label>
+                    <input type="tel" placeholder="Your Phone Number"
+                        class="w-full border border-gray-300 rounded-full px-4 py-3 focus:outline-none focus:border-champagne">
+                </div>
+
+                <div>
+                    <label class="block text-sm text-textmuted mb-1">Message</label>
+                    <textarea rows="4" placeholder="Your Message"
+                        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-champagne"></textarea>
+                </div>
+
+                <button type="button"
+                    class="w-full bg-champagne text-white py-3 rounded-full hover:shadow-lg transition">
+                    Send Message
+                </button>
+
+                <p class="text-xs text-textmuted text-center">
+                    *This form is for enquiries only. We’ll contact you shortly.
+                </p>
+
+            </form>
+        </div>
+
+    </section>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/919999999999?text=Hello%20Harshita%20Anukriti%20Makeup%20Studio,%20I%20would%20like%20to%20enquire."
+        target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:scale-105 transition z-50">
+        WhatsApp
+    </a>
+    <div id="footer"></div>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+    </script>
+    <script>
+        // Fade in on page load
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("page-loaded");
+        });
+
+        // Intercept link clicks for fade-out
+        document.addEventListener("click", function (e) {
+            const link = e.target.closest("a");
+
+            if (
+                link &&
+                link.href &&
+                link.origin === window.location.origin &&
+                !link.hasAttribute("target") &&
+                !link.href.includes("#")
+            ) {
+                e.preventDefault();
+                document.body.classList.remove("page-loaded");
+
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 400);
+            }
+        });
+
+        // Load Header
+        fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                highlightActiveLink();
+            });
+
+        // Load Footer
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+
+        // Highlight active menu item
+        function highlightActiveLink() {
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            document.querySelectorAll(".nav-link").forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add(
+                        "text-champagne",
+                        "font-medium",
+                        "border-b-2",
+                        "border-champagne"
+                    );
+                }
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
