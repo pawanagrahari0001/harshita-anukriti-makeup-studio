@@ -1,40 +1,67 @@
-<header class="sticky top-0 z-50 bg-ivory shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<header class="sticky top-0 z-50 bg-[#FAF7F3]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
         <!-- LOGO -->
-        <a href="index.html" class="font-serif text-2xl text-textdark">
-            Harshita Anukriti
+        <a href="index.html" class="flex items-center">
+            <img src="images/logo/logo.png" alt="Harshita Anukriti Makeup Studio" class="h-11 md:h-12 object-contain" />
         </a>
 
         <!-- DESKTOP NAV -->
-        <nav class="hidden md:flex gap-8 text-sm">
-            <a href="index.html" class="nav-link hover:text-champagne">Home</a>
-            <a href="about.html" class="nav-link hover:text-champagne">About</a>
-            <a href="services.html" class="nav-link hover:text-champagne">Services</a>
-            <a href="courses.html" class="nav-link hover:text-champagne">Courses</a>
-            <a href="gallery.html" class="nav-link hover:text-champagne">Gallery</a>
-            <a href="testimonials.html" class="nav-link hover:text-champagne">Testimonials</a>
-            <a href="contact.html" class="nav-link bg-champagne text-white px-5 py-2 rounded-full">
-                Contact
+        <nav class="hidden md:flex items-center gap-10 text-[13px] uppercase tracking-widest text-[#6F6A66]">
+
+            <a href="index.html" class="nav-link hover:text-[#C8A27A] transition">
+                Home
+            </a>
+
+            <a href="about.html" class="nav-link hover:text-[#C8A27A] transition">
+                About
+            </a>
+
+            <a href="services.html" class="nav-link hover:text-[#C8A27A] transition">
+                Services
+            </a>
+
+            <a href="courses.html" class="nav-link hover:text-[#C8A27A] transition">
+                Courses
+            </a>
+
+            <a href="gallery.html" class="nav-link hover:text-[#C8A27A] transition">
+                Gallery
+            </a>
+
+            <!-- CTA -->
+            <a href="contact.html"
+                class="nav-link ml-4 bg-[#C8A27A] text-white px-7 py-2 rounded-full text-[12px] tracking-wider hover:shadow-md transition">
+                Book Now
             </a>
         </nav>
 
         <!-- MOBILE MENU BUTTON -->
-        <button class="md:hidden text-3xl" onclick="toggleMenu()">☰</button>
+        <button class="md:hidden text-2xl text-[#2A2A2A]" onclick="toggleMenu()">
+            ☰
+        </button>
+
     </div>
 
     <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden md:hidden bg-ivory border-t">
-        <nav class="flex flex-col px-6 py-4 space-y-4">
+    <div id="mobileMenu" class="hidden md:hidden bg-[#FAF7F3] border-t border-[#eee6df]">
+
+        <nav class="flex flex-col px-6 py-8 space-y-6 text-sm uppercase tracking-widest text-[#6F6A66]">
+
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="courses.html" class="nav-link">Courses</a>
             <a href="gallery.html" class="nav-link">Gallery</a>
-            <a href="testimonials.html" class="nav-link">Testimonials</a>
-            <a href="contact.html" class="nav-link text-champagne font-medium">
-                Contact
+
+            <a href="contact.html"
+                class="nav-link mt-4 bg-[#C8A27A] text-white text-center py-3 rounded-full tracking-wider">
+                Book Now
             </a>
+
         </nav>
     </div>
+
+    <!-- subtle divider -->
+    <div class="h-px bg-[#efe7df]"></div>
 </header>

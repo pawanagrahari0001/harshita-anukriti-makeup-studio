@@ -1,27 +1,64 @@
-/* ===== GLOBAL HORIZONTAL SCROLL FIX ===== */
+/* ==================================================
+   GLOBAL LAYOUT SAFETY (NO HORIZONTAL SCROLL)
+   ================================================== */
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden !important;
+  overflow-x: hidden; /* final authority */
+  position: relative;
 }
 
-/* Prevent elements from exceeding viewport */
-* {
+/* --------------------------------------------------
+   BOX MODEL CONSISTENCY
+-------------------------------------------------- */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-/* Prevent images from overflowing */
-img {
-  max-width: 100%;
+/* --------------------------------------------------
+   IMAGE SAFETY
+-------------------------------------------------- */
+img,
+video {
+  display: block;         /* removes inline gaps */
+  max-width: 100%;        /* prevents overflow */
   height: auto;
 }
 
-/* Swiper specific fix */
-.swiper,
-.swiper-wrapper,
-.swiper-slide {
+/* --------------------------------------------------
+   SWIPER / SLIDER SAFETY
+-------------------------------------------------- */
+.swiper {
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.swiper-slide {
+  width: 100% !important; /* critical */
+  max-width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------
+   SECTION & CONTAINER SAFETY
+-------------------------------------------------- */
+section,
+header,
+footer,
+main {
+  max-width: 100%;
+  overflow-x: hidden;
 }
