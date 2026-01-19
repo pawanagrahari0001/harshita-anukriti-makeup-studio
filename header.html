@@ -1,70 +1,45 @@
 <header class="sticky top-0 z-50 bg-[#FAF7F3]">
-    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 h-[80px] md:h-[90px] flex items-center justify-between">
 
-        <!-- LOGO -->
-        <a href="index.html" class="flex items-center">
-            <img src="images/logo/logo.png" alt="Harshita Anukriti Makeup Studio"
-                class="h-10 md:h-11 object-contain opacity-95" style="filter: contrast(1.05) brightness(0.95);" />
-
+        <a href="index.html" class="flex items-center h-full">
+            <img src="images/logo/logo.png" 
+                 alt="Harshita Anukriti Makeup Studio" 
+                 class="h-14 md:h-20 object-contain transition-transform duration-300 hover:scale-105"
+                 style="filter: contrast(1.1) saturate(1.05);" />
         </a>
 
-        <!-- DESKTOP NAV -->
-        <nav class="hidden md:flex items-center gap-10 text-[12px] uppercase tracking-[0.18em] text-[#6E6A66]">
+        <nav class="hidden md:flex items-center gap-8 text-[12px] uppercase tracking-[0.14em]">
+            <a href="index.html" class="nav-link hover:text-[#C8A27A] transition">Home</a>
+            <a href="about.html" class="nav-link hover:text-[#C8A27A] transition">About</a>
+            <a href="services.html" class="nav-link hover:text-[#C8A27A] transition">Services</a>
+            <a href="courses.html" class="nav-link hover:text-[#C8A27A] transition">Courses</a>
+            <a href="gallery.html" class="nav-link hover:text-[#C8A27A] transition">Gallery</a>
 
-            <a href="index.html" class="nav-link hover:text-[#C8A27A] transition">
-                Home
-            </a>
-
-            <a href="about.html" class="nav-link hover:text-[#C8A27A] transition">
-                About
-            </a>
-
-            <a href="services.html" class="nav-link hover:text-[#C8A27A] transition">
-                Services
-            </a>
-
-            <a href="courses.html" class="nav-link hover:text-[#C8A27A] transition">
-                Courses
-            </a>
-
-            <a href="gallery.html" class="nav-link hover:text-[#C8A27A] transition">
-                Gallery
-            </a>
-
-            <!-- CTA -->
             <a href="contact.html"
-                class="nav-link ml-4 border border-[#C8A27A] text-[#C8A27A] px-6 py-2 rounded-full text-[11px] tracking-widest hover:bg-[#C8A27A] hover:text-white transition">
-                Book Now
+                class="ml-2 border border-[#C8A27A] text-[#C8A27A] px-7 py-2.5 rounded-full text-[11px] tracking-[0.18em] hover:bg-[#C8A27A] hover:text-white transition-all duration-300">
+                Books Now
             </a>
-
         </nav>
 
-        <!-- MOBILE MENU BUTTON -->
-        <button class="md:hidden text-2xl text-[#2A2A2A]" onclick="toggleMenu()">
+        <button class="md:hidden text-2xl text-[#2A2A2A] focus:outline-none" onclick="toggleMenu()">
             ☰
         </button>
 
     </div>
 
-    <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden md:hidden bg-[#FAF7F3] border-t border-[#eee6df]">
-
+    <div id="mobileMenu" class="hidden md:hidden bg-[#FAF7F3] border-t border-[#eee6df] absolute w-full left-0">
         <nav class="flex flex-col px-6 py-8 space-y-6 text-sm uppercase tracking-widest text-[#6F6A66]">
-
             <a href="index.html" class="nav-link">Home</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="services.html" class="nav-link">Services</a>
             <a href="courses.html" class="nav-link">Courses</a>
             <a href="gallery.html" class="nav-link">Gallery</a>
-
             <a href="contact.html"
-                class="nav-link mt-4 bg-[#C8A27A] text-white text-center py-3 rounded-full tracking-wider">
+                class="mt-4 bg-[#C8A27A] text-white text-center py-4 rounded-full tracking-wider">
                 Book Now
             </a>
-
         </nav>
     </div>
 
-    <!-- subtle divider -->
     <div class="h-px bg-[#efe7df]"></div>
 </header>

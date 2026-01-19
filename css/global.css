@@ -1,15 +1,21 @@
 /* ==================================================
-   GLOBAL LAYOUT SAFETY (NO HORIZONTAL SCROLL)
+   GLOBAL LAYOUT SAFETY & SMOOTHING
    ================================================== */
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* final authority */
+  overflow-x: hidden;
   position: relative;
+  /* Smoother font rendering for luxury sites */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* --------------------------------------------------
@@ -22,13 +28,15 @@ body {
 }
 
 /* --------------------------------------------------
-   IMAGE SAFETY
+   IMAGE & LOGO SAFETY
 -------------------------------------------------- */
 img,
 video {
-  display: block;         /* removes inline gaps */
-  max-width: 100%;        /* prevents overflow */
+  display: block;
+  max-width: 100%;
   height: auto;
+  /* Prevents logos and thin lines from looking blurry */
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* --------------------------------------------------
@@ -40,16 +48,40 @@ video {
   overflow: hidden;
 }
 
-.swiper-wrapper {
+.swiper-slide img {
   width: 100%;
-  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.swiper-slide {
-  width: 100% !important; /* critical */
-  max-width: 100%;
-  flex-shrink: 0;
-  overflow: hidden;
+/* --------------------------------------------------
+   NAVIGATION & LUXURY INTERACTION
+-------------------------------------------------- */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Animated Underline Effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Space below the text */
+  width: 0;
+  height: 1.5px;
+  background-color: #C8A27A;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Ensure the active link stays the theme color */
+.nav-link.active {
+  color: #C8A27A !important;
 }
 
 /* --------------------------------------------------
@@ -61,4 +93,22 @@ footer,
 main {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Custom Scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8C6B8;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A27A;
 }

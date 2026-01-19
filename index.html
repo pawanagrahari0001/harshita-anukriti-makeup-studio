@@ -175,7 +175,8 @@
             .then(data => {
                 document.getElementById("header").innerHTML = data;
                 highlightActiveLink();
-            });
+            })
+            .catch(err => console.error("Error loading header:", err));
 
         // Load Footer
         fetch("footer.html")
@@ -189,18 +190,16 @@
             document.getElementById("mobileMenu").classList.toggle("hidden");
         }
 
-        // Highlight active menu item
+        // High-end Active Link Highlighting
         function highlightActiveLink() {
-            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+            const path = window.location.pathname;
+            const currentPage = path.split("/").pop() || "index.html";
 
             document.querySelectorAll(".nav-link").forEach(link => {
                 if (link.getAttribute("href") === currentPage) {
-                    link.classList.add(
-                        "text-champagne",
-                        "font-medium",
-                        "border-b-2",
-                        "border-champagne"
-                    );
+                    link.classList.add("active", "text-champagne");
+                    // If it's the mobile menu, we remove the border-b class to rely on global.css
+                    link.style.borderBottom = "none";
                 }
             });
         }
