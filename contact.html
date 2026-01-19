@@ -108,8 +108,8 @@
 
                 <div>
                     <strong class="text-textdark">Instagram</strong><br>
-                    <a href="https://www.instagram.com/_harshita_agrahari?igsh=MWtxczZzdDVlaXF3MQ="
-                        target="_blank" class="text-champagne hover:underline">
+                    <a href="https://www.instagram.com/_harshita_agrahari?igsh=MWtxczZzdDVlaXF3MQ=" target="_blank"
+                        class="text-champagne hover:underline">
                         @harshitaanukritimakeup
                     </a>
                 </div>
@@ -118,8 +118,7 @@
         </div>
 
         <!-- RIGHT CONTENT (CTA BLOCK) -->
-        <div data-aos="fade-left"
-            class="bg-white p-10 rounded-xl shadow-sm flex flex-col justify-center">
+        <div data-aos="fade-left" class="bg-white p-10 rounded-xl shadow-sm flex flex-col justify-center">
 
             <h3 class="text-2xl font-serif mb-4">
                 Booking & Enquiries
@@ -156,28 +155,32 @@
     </script>
 
     <script>
+        // Fade in on page load
         window.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("page-loaded");
         });
 
-        document.addEventListener("click", function (e) {
-            const link = e.target.closest("a");
+        // Fade out on link click (without breaking history)
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function (e) {
+                const url = this.getAttribute("href");
 
-            if (
-                link &&
-                link.href &&
-                link.origin === window.location.origin &&
-                !link.hasAttribute("target") &&
-                !link.href.includes("#")
-            ) {
-                e.preventDefault();
-                document.body.classList.remove("page-loaded");
+                if (
+                    url &&
+                    !url.startsWith("#") &&
+                    !this.hasAttribute("target") &&
+                    this.origin === window.location.origin
+                ) {
+                    e.preventDefault();
+                    document.body.classList.remove("page-loaded");
 
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 400);
-            }
+                    setTimeout(() => {
+                        window.location.assign(url); // keeps browser history intact
+                    }, 300);
+                }
+            });
         });
+
 
         fetch("header.html")
             .then(res => res.text())

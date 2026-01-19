@@ -150,25 +150,27 @@
             document.body.classList.add("page-loaded");
         });
 
-        // Intercept link clicks for fade-out
-        document.addEventListener("click", function (e) {
-            const link = e.target.closest("a");
+        // Fade out on link click (without breaking history)
+        document.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", function (e) {
+                const url = this.getAttribute("href");
 
-            if (
-                link &&
-                link.href &&
-                link.origin === window.location.origin &&
-                !link.hasAttribute("target") &&
-                !link.href.includes("#")
-            ) {
-                e.preventDefault();
-                document.body.classList.remove("page-loaded");
+                if (
+                    url &&
+                    !url.startsWith("#") &&
+                    !this.hasAttribute("target") &&
+                    this.origin === window.location.origin
+                ) {
+                    e.preventDefault();
+                    document.body.classList.remove("page-loaded");
 
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 400);
-            }
+                    setTimeout(() => {
+                        window.location.assign(url); // keeps browser history intact
+                    }, 300);
+                }
+            });
         });
+
 
         // Load Header
         fetch("header.html")
