@@ -1,61 +1,77 @@
 <header class="sticky top-0 z-50 bg-[#FAF7F3]">
-    
-    <!-- Header Container -->
-    <div class="max-w-7xl mx-auto px-6 h-[88px] md:h-[104px] flex items-center justify-between">
 
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center h-full">
-            <img src="images/logo/logo.png" 
-                 alt="Harshita Anukriti Makeup Studio" 
-                 class="h-16 md:h-24 w-auto max-h-full object-contain flex-shrink-0 transition-transform duration-300 hover:scale-105"
-                 style="filter: contrast(1.1) saturate(1.05);" />
-        </a>
+  <!-- Header Container -->
+  <div class="max-w-7xl mx-auto px-6 h-[88px] md:h-[104px] flex items-center justify-between">
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-8 text-[12px] uppercase tracking-[0.14em] text-[#2A2A2A]">
-            <a href="index.html" class="nav-link hover:text-[#C8A27A] transition">Home</a>
-            <a href="about.html" class="nav-link hover:text-[#C8A27A] transition">About</a>
-            <a href="services.html" class="nav-link hover:text-[#C8A27A] transition">Services</a>
-            <a href="courses.html" class="nav-link hover:text-[#C8A27A] transition">Courses</a>
-            <a href="gallery.html" class="nav-link hover:text-[#C8A27A] transition">Gallery</a>
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center h-full">
+      <img
+        src="images/logo/logo.png"
+        alt="Harshita Anukriti Makeup Studio"
+        class="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+        style="filter: contrast(1.1) saturate(1.05);"
+      />
+    </a>
 
-            <a href="contact.html"
-               class="ml-2 border border-[#C8A27A] text-[#C8A27A] px-7 py-2.5 rounded-full text-[11px] tracking-[0.18em]
-                      hover:bg-[#C8A27A] hover:text-white transition-all duration-300">
-                Book Now
-            </a>
-        </nav>
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center gap-8 text-[12px] uppercase tracking-[0.14em] text-[#2A2A2A]">
 
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-3xl text-[#2A2A2A] focus:outline-none" onclick="toggleMenu()">
-            ☰
-        </button>
-    </div>
+      <a href="index.html" class="nav-link hover:text-[#C8A27A] transition">Home</a>
+      <a href="about.html" class="nav-link hover:text-[#C8A27A] transition">About</a>
+      <a href="services.html" class="nav-link hover:text-[#C8A27A] transition">Services</a>
+      <a href="courses.html" class="nav-link hover:text-[#C8A27A] transition">Courses</a>
+      <a href="gallery.html" class="nav-link hover:text-[#C8A27A] transition">Gallery</a>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" 
-         class="hidden md:hidden bg-[#FAF7F3] border-t border-[#eee6df] absolute w-full left-0 z-40">
-        <nav class="flex flex-col px-6 py-8 space-y-6 text-sm uppercase tracking-widest text-[#6F6A66]">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="services.html" class="nav-link">Services</a>
-            <a href="courses.html" class="nav-link">Courses</a>
-            <a href="gallery.html" class="nav-link">Gallery</a>
+      <!-- CTA -->
+      <a href="contact.html"
+        class="ml-2 border border-[#C8A27A] text-[#C8A27A] px-7 py-2.5 rounded-full text-[11px] tracking-[0.18em]
+               hover:bg-[#C8A27A] hover:text-white transition-all duration-300">
+        Book Now
+      </a>
 
-            <a href="contact.html"
-               class="mt-4 bg-[#C8A27A] text-white text-center py-4 rounded-full tracking-wider">
-                Book Now
-            </a>
-        </nav>
-    </div>
+    </nav>
 
-    <!-- Bottom Divider -->
-    <div class="h-px bg-[#efe7df]"></div>
+    <!-- MOBILE MENU BUTTON -->
+    <button
+      class="md:hidden text-3xl text-[#2A2A2A] focus:outline-none"
+      aria-label="Open Menu"
+      onclick="toggleMenu()">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div
+    id="mobileMenu"
+    class="hidden md:hidden fixed inset-x-0 top-[88px] md:top-[104px]
+           bg-[#FAF7F3] border-t border-[#eee6df]
+           z-[9999] shadow-lg transition-all duration-300 ease-out">
+
+    <nav class="flex flex-col px-6 py-8 space-y-6 text-sm uppercase tracking-widest text-[#6F6A66]">
+
+      <a href="index.html" class="nav-link" onclick="toggleMenu()">Home</a>
+      <a href="about.html" class="nav-link" onclick="toggleMenu()">About</a>
+      <a href="services.html" class="nav-link" onclick="toggleMenu()">Services</a>
+      <a href="courses.html" class="nav-link" onclick="toggleMenu()">Courses</a>
+      <a href="gallery.html" class="nav-link" onclick="toggleMenu()">Gallery</a>
+
+      <a href="contact.html"
+        class="mt-4 bg-[#C8A27A] text-white text-center py-4 rounded-full tracking-wider"
+        onclick="toggleMenu()">
+        Book Now
+      </a>
+
+    </nav>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="h-px bg-[#efe7df]"></div>
 </header>
 
-<!-- Mobile Menu Toggle Script -->
+<!-- MOBILE MENU TOGGLE SCRIPT -->
 <script>
-    function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('hidden');
-    }
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
 </script>
