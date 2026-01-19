@@ -1,114 +1,117 @@
 /* ==================================================
-   GLOBAL LAYOUT SAFETY & SMOOTHING
+   GLOBAL RESET & SAFETY
    ================================================== */
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  position: relative;
-  /* Smoother font rendering for luxury sites */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
 }
 
-/* --------------------------------------------------
-   BOX MODEL CONSISTENCY
--------------------------------------------------- */
+/* Box sizing consistency */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* --------------------------------------------------
-   IMAGE & LOGO SAFETY
--------------------------------------------------- */
+/* ==================================================
+   IMAGE & MEDIA SAFETY
+   ================================================== */
+
 img,
 video {
-  display: block;
   max-width: 100%;
   height: auto;
-  /* Prevents logos and thin lines from looking blurry */
-  image-rendering: -webkit-optimize-contrast;
+  display: block;
 }
 
-/* --------------------------------------------------
-   SWIPER / SLIDER SAFETY
--------------------------------------------------- */
-.swiper {
+/* ==================================================
+   HEADER FIXES (VERY IMPORTANT)
+   ================================================== */
+
+/* Prevent background flicker on sticky scroll */
+header {
+  will-change: transform;
+}
+
+/* Smooth shadow when scrolling */
+header > div.shadow-md {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure header content never bleeds */
+header div {
+  background-clip: padding-box;
+}
+
+/* ==================================================
+   NAVIGATION ACTIVE LINK
+   ================================================== */
+
+.nav-link {
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #c8a27a;
+}
+
+/* Active page underline */
+.nav-link.text-champagne::after,
+.nav-link.border-champagne::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
+  height: 2px;
+  background-color: #c8a27a;
+  border-radius: 1px;
+}
+
+/* ==================================================
+   MOBILE MENU FIXES
+   ================================================== */
+
+/* Prevent background scroll when menu open (optional future use) */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Mobile menu animation polish */
+#mobileMenu {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ==================================================
+   SWIPER / SLIDER SAFETY
+   ================================================== */
+
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
   max-width: 100%;
   overflow: hidden;
 }
 
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.swiper-slide {
+  flex-shrink: 0;
 }
 
-/* --------------------------------------------------
-   NAVIGATION & LUXURY INTERACTION
--------------------------------------------------- */
-.nav-link {
-  position: relative;
-  transition: color 0.3s ease;
-}
+/* ==================================================
+   SECTION SAFETY (NO HORIZONTAL SCROLL)
+   ================================================== */
 
-/* Animated Underline Effect */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px; /* Space below the text */
-  width: 0;
-  height: 1.5px;
-  background-color: #C8A27A;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-/* Ensure the active link stays the theme color */
-.nav-link.active {
-  color: #C8A27A !important;
-}
-
-/* --------------------------------------------------
-   SECTION & CONTAINER SAFETY
--------------------------------------------------- */
 section,
-header,
-footer,
-main {
+main,
+footer {
   max-width: 100%;
   overflow-x: hidden;
-}
-
-/* Custom Scrollbar for a cleaner look */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #FAF7F3;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #E8C6B8;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #C8A27A;
 }

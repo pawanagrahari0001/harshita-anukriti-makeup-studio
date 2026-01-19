@@ -1,44 +1,51 @@
-<header class="sticky top-0 z-50 bg-[#FAF7F3]">
+<!-- HEADER -->
+<header class="sticky top-0 z-50">
 
-  <!-- Header Container -->
-  <div class="max-w-7xl mx-auto px-6 h-[88px] md:h-[104px] flex items-center justify-between">
+  <!-- HEADER BAR -->
+  <div class="bg-[#FAF7F3]">
+    <div
+      class="max-w-7xl mx-auto px-6 h-[88px] md:h-[104px]
+             flex items-center justify-between">
 
-    <!-- LOGO -->
-    <a href="index.html" class="flex items-center h-full">
-      <img
-        src="images/logo/logo.png"
-        alt="Harshita Anukriti Makeup Studio"
-        class="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
-        style="filter: contrast(1.1) saturate(1.05);"
-      />
-    </a>
-
-    <!-- DESKTOP NAV -->
-    <nav class="hidden md:flex items-center gap-8 text-[12px] uppercase tracking-[0.14em] text-[#2A2A2A]">
-
-      <a href="index.html" class="nav-link hover:text-[#C8A27A] transition">Home</a>
-      <a href="about.html" class="nav-link hover:text-[#C8A27A] transition">About</a>
-      <a href="services.html" class="nav-link hover:text-[#C8A27A] transition">Services</a>
-      <a href="courses.html" class="nav-link hover:text-[#C8A27A] transition">Courses</a>
-      <a href="gallery.html" class="nav-link hover:text-[#C8A27A] transition">Gallery</a>
-
-      <!-- CTA -->
-      <a href="contact.html"
-        class="ml-2 border border-[#C8A27A] text-[#C8A27A] px-7 py-2.5 rounded-full text-[11px] tracking-[0.18em]
-               hover:bg-[#C8A27A] hover:text-white transition-all duration-300">
-        Book Now
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center h-full">
+        <img
+          src="images/logo/logo.png"
+          alt="Harshita Anukriti Makeup Studio"
+          class="h-16 md:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+          style="filter: contrast(1.1) saturate(1.05);"
+        />
       </a>
 
-    </nav>
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex items-center gap-8 text-[12px] uppercase tracking-[0.14em] text-[#2A2A2A]">
 
-    <!-- MOBILE MENU BUTTON -->
-    <button
-      class="md:hidden text-3xl text-[#2A2A2A] focus:outline-none"
-      aria-label="Open Menu"
-      onclick="toggleMenu()">
-      ☰
-    </button>
+        <a href="index.html" class="nav-link hover:text-[#C8A27A] transition">Home</a>
+        <a href="about.html" class="nav-link hover:text-[#C8A27A] transition">About</a>
+        <a href="services.html" class="nav-link hover:text-[#C8A27A] transition">Services</a>
+        <a href="courses.html" class="nav-link hover:text-[#C8A27A] transition">Courses</a>
+        <a href="gallery.html" class="nav-link hover:text-[#C8A27A] transition">Gallery</a>
 
+        <!-- CTA -->
+        <a
+          href="contact.html"
+          class="ml-2 border border-[#C8A27A] text-[#C8A27A]
+                 px-7 py-2.5 rounded-full text-[11px] tracking-[0.18em]
+                 hover:bg-[#C8A27A] hover:text-white transition-all duration-300">
+          Book Now
+        </a>
+
+      </nav>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button
+        class="md:hidden text-3xl text-[#2A2A2A] focus:outline-none"
+        aria-label="Open Menu"
+        onclick="toggleMenu()">
+        ☰
+      </button>
+
+    </div>
   </div>
 
   <!-- MOBILE MENU -->
@@ -56,7 +63,8 @@
       <a href="courses.html" class="nav-link" onclick="toggleMenu()">Courses</a>
       <a href="gallery.html" class="nav-link" onclick="toggleMenu()">Gallery</a>
 
-      <a href="contact.html"
+      <a
+        href="contact.html"
         class="mt-4 bg-[#C8A27A] text-white text-center py-4 rounded-full tracking-wider"
         onclick="toggleMenu()">
         Book Now
@@ -69,9 +77,19 @@
   <div class="h-px bg-[#efe7df]"></div>
 </header>
 
-<!-- MOBILE MENU TOGGLE SCRIPT -->
+<!-- HEADER SCRIPT -->
 <script>
   function toggleMenu() {
     document.getElementById("mobileMenu").classList.toggle("hidden");
   }
+
+  // Add subtle shadow on scroll (prevents background bleed look)
+  window.addEventListener("scroll", () => {
+    const headerBar = document.querySelector("header > div");
+    if (window.scrollY > 10) {
+      headerBar.classList.add("shadow-md");
+    } else {
+      headerBar.classList.remove("shadow-md");
+    }
+  });
 </script>
