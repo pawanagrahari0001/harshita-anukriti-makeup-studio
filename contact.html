@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Harshita Anukriti Makeup Studio</title>
+
     <meta name="description"
         content="Contact Harshita Anukriti Makeup Studio for bridal makeup bookings and professional training." />
 
@@ -35,8 +36,8 @@
             }
         }
     </script>
+
     <style>
-        /* Page transition */
         body {
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
@@ -55,11 +56,11 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-
     <link rel="stylesheet" href="css/global.css">
 </head>
 
 <body class="bg-ivory font-sans text-textdark">
+
     <div id="header"></div>
 
     <!-- PAGE HERO -->
@@ -75,77 +76,66 @@
         </div>
     </section>
 
-    <!-- CONTACT CONTENT -->
+    <!-- CONTACT CONTENT (NO FORM) -->
     <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
 
-        <!-- CONTACT DETAILS -->
+        <!-- LEFT CONTENT -->
         <div data-aos="fade-right">
             <h2 class="text-3xl font-serif mb-6">Contact Details</h2>
 
-            <p class="text-textmuted mb-4">
-                Reach out to us via phone, WhatsApp, or Instagram for quick responses
-                regarding bridal bookings and professional training.
+            <p class="text-textmuted mb-10 leading-relaxed">
+                For bridal makeup bookings, party makeup, or professional training enquiries,
+                we prefer direct communication to ensure a clear, personalized, and smooth
+                booking experience for every client.
             </p>
 
-            <ul class="space-y-4 text-textmuted">
-                <li>
-                    <strong class="text-textdark">Phone:</strong><br>
+            <div class="space-y-6 text-textmuted">
+
+                <div>
+                    <strong class="text-textdark">Phone</strong><br>
                     <a href="tel:+917570938868" class="text-champagne hover:underline">
                         +91 75709 38868
                     </a>
-                </li>
+                </div>
 
-                <li>
-                    <strong class="text-textdark">WhatsApp:</strong><br>
+                <div>
+                    <strong class="text-textdark">WhatsApp</strong><br>
                     <a href="https://wa.me/917570938868?text=Hello%20Harshita%20Anukriti%20Makeup%20Studio,%20I%20would%20like%20to%20enquire."
                         target="_blank" class="text-champagne hover:underline">
                         Chat on WhatsApp
                     </a>
-                </li>
+                </div>
 
-                <li>
-                    <strong class="text-textdark">Instagram:</strong><br>
-                    <a href="https://www.instagram.com/_harshita_agrahari?igsh=MWtxczZzdDVlaXF3MQ=" target="_blank" class="text-champagne hover:underline">
+                <div>
+                    <strong class="text-textdark">Instagram</strong><br>
+                    <a href="https://www.instagram.com/_harshita_agrahari?igsh=MWtxczZzdDVlaXF3MQ="
+                        target="_blank" class="text-champagne hover:underline">
                         @harshitaanukritimakeup
                     </a>
-                </li>
-            </ul>
+                </div>
+
+            </div>
         </div>
 
-        <!-- CONTACT FORM -->
-        <div data-aos="fade-left">
-            <h2 class="text-3xl font-serif mb-6">Send a Message</h2>
+        <!-- RIGHT CONTENT (CTA BLOCK) -->
+        <div data-aos="fade-left"
+            class="bg-white p-10 rounded-xl shadow-sm flex flex-col justify-center">
 
-            <form class="bg-white p-8 rounded-xl shadow-sm space-y-5">
+            <h3 class="text-2xl font-serif mb-4">
+                Booking & Enquiries
+            </h3>
 
-                <div>
-                    <label class="block text-sm text-textmuted mb-1">Name</label>
-                    <input type="text" placeholder="Your Name"
-                        class="w-full border border-gray-300 rounded-full px-4 py-3 focus:outline-none focus:border-champagne">
-                </div>
+            <p class="text-textmuted mb-8">
+                Bridal slots are limited and booked in advance.
+                Contact us early to secure your preferred date.
+            </p>
 
-                <div>
-                    <label class="block text-sm text-textmuted mb-1">Phone</label>
-                    <input type="tel" placeholder="Your Phone Number"
-                        class="w-full border border-gray-300 rounded-full px-4 py-3 focus:outline-none focus:border-champagne">
-                </div>
+            <a href="https://wa.me/917570938868?text=Hello%20Harshita%20Anukriti%20Makeup%20Studio,%20I%20would%20like%20to%20book%20a%20bridal%20makeup%20appointment."
+                target="_blank"
+                class="inline-block bg-champagne text-white px-8 py-3 rounded-full text-center hover:shadow-lg transition">
+                Enquire on WhatsApp
+            </a>
 
-                <div>
-                    <label class="block text-sm text-textmuted mb-1">Message</label>
-                    <textarea rows="4" placeholder="Your Message"
-                        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-champagne"></textarea>
-                </div>
-
-                <button type="button"
-                    class="w-full bg-champagne text-white py-3 rounded-full hover:shadow-lg transition">
-                    Send Message
-                </button>
-
-                <p class="text-xs text-textmuted text-center">
-                    *This form is for enquiries only. We’ll contact you shortly.
-                </p>
-
-            </form>
         </div>
 
     </section>
@@ -156,6 +146,7 @@
         class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg hover:scale-105 transition z-50">
         WhatsApp
     </a>
+
     <div id="footer"></div>
 
     <!-- AOS -->
@@ -163,13 +154,12 @@
     <script>
         AOS.init({ once: true, duration: 800 });
     </script>
+
     <script>
-        // Fade in on page load
         window.addEventListener("DOMContentLoaded", () => {
             document.body.classList.add("page-loaded");
         });
 
-        // Intercept link clicks for fade-out
         document.addEventListener("click", function (e) {
             const link = e.target.closest("a");
 
@@ -189,7 +179,6 @@
             }
         });
 
-        // Load Header
         fetch("header.html")
             .then(res => res.text())
             .then(data => {
@@ -197,19 +186,16 @@
                 highlightActiveLink();
             });
 
-        // Load Footer
         fetch("footer.html")
             .then(res => res.text())
             .then(data => {
                 document.getElementById("footer").innerHTML = data;
             });
 
-        // Mobile menu toggle
         function toggleMenu() {
             document.getElementById("mobileMenu").classList.toggle("hidden");
         }
 
-        // Highlight active menu item
         function highlightActiveLink() {
             const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
@@ -225,7 +211,6 @@
             });
         }
     </script>
-
 
 </body>
 
