@@ -57,39 +57,48 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="css/global.css">
 </head>
 
 <body class="bg-ivory font-sans text-textdark">
     <div id="header"></div>
 
     <!-- HERO SECTION -->
-    <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div data-aos="fade-right">
-            <h1 class="text-4xl md:text-5xl font-serif leading-tight">
-                Timeless Bridal Makeup <br> & Professional Training
-            </h1>
-            <p class="mt-4 text-textmuted">
-                Luxury bridal artistry and expert makeup education crafted with elegance and precision.
-            </p>
-            <div class="mt-6 flex gap-4">
-                <button class="bg-champagne text-white px-6 py-3 rounded-full hover:shadow-lg transition">
-                    Book Bridal Makeup
-                </button>
-                <button
-                    class="border border-champagne text-champagne px-6 py-3 rounded-full hover:bg-champagne hover:text-white transition">
-                    Join Makeup Training
-                </button>
-            </div>
-        </div>
+    <section class="w-full overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
 
-        <!-- Swiper Carousel -->
-        <div class="swiper rounded-xl overflow-hidden">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="images/hero/hero-1.jpg" class="w-full h-[460px] object-cover">
+            <div data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-serif leading-tight">
+                    Timeless Bridal Makeup <br> & Professional Training
+                </h1>
+                <p class="mt-4 text-textmuted">
+                    Luxury bridal artistry and expert makeup education crafted with elegance and precision.
+                </p>
+                <div class="mt-6 flex gap-4">
+                    <button class="bg-champagne text-white px-6 py-3 rounded-full hover:shadow-lg transition">
+                        Book Bridal Makeup
+                    </button>
+                    <button
+                        class="border border-champagne text-champagne px-6 py-3 rounded-full hover:bg-champagne hover:text-white transition">
+                        Join Makeup Training
+                    </button>
                 </div>
-                <div class="swiper-slide">
-                    <img src="images/hero/hero-2.jpg" class="w-full h-[460px] object-cover">
+            </div>
+
+            <!-- Swiper Carousel -->
+            <div class="swiper w-full max-w-full overflow-hidden rounded-xl">
+                <div class="swiper-wrapper w-full max-w-full">
+
+                    <div class="swiper-slide w-full max-w-full flex-shrink-0">
+                        <img src="images/hero/hero-1.png" class="w-full max-w-full h-[460px] object-cover block"
+                            alt="Luxury bridal makeup by Harshita Anukriti">
+                    </div>
+
+                    <div class="swiper-slide w-full max-w-full flex-shrink-0">
+                        <img src="images/hero/hero-2.png" class="w-full max-w-full h-[460px] object-cover block"
+                            alt="Professional makeup training studio">
+                    </div>
+
                 </div>
             </div>
         </div>

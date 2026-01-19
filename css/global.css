@@ -1,0 +1,27 @@
+/* ===== GLOBAL HORIZONTAL SCROLL FIX ===== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Prevent elements from exceeding viewport */
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent images from overflowing */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Swiper specific fix */
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  max-width: 100%;
+  overflow: hidden;
+}
